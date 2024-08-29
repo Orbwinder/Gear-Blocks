@@ -37,7 +37,7 @@ void UpdateEvents(){
 
         // check for respawn/reset changes
         if ( player.NbRespawnsRequested != g_prevRespawns 
-        || player.CpCount < g_prevCheckpoints 
+        || uint(player.CpCount) < g_prevCheckpoints 
         || player.TheoreticalRaceTime < g_prevRaceTime
         ) {
             // erase all events to cancel all animations

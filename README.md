@@ -1,6 +1,6 @@
 # Gear Blocks
 
-Displays the vehicle's gear status in a way that is readable at a glance. 
+Trackmania 2020 plugin to display the vehicle's gear status in a way that is readable at a glance. 
 
 ## Features
 - Configurable layout & style

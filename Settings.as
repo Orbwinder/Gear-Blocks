@@ -16,9 +16,9 @@ bool Setting_ShowPredictedGear = true;
 
 [Setting category="Layout" name="Gearbox Position" description="(horizontal, vertical)"]
 vec2 Setting_Position = vec2(0.5, 0.1);
-// vec2(800, 100);
+
 [Setting category="Layout" name="Gearbox Size" description="(width, height)"]
-vec2 Setting_Size = vec2(280, 30); // 370, 90
+vec2 Setting_Size = vec2(280, 30);
 
 [Setting category="Layout" name="Padding Size"]
 float Setting_BackdropPadding = 20;

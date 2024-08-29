@@ -2,7 +2,7 @@
 name     = "Gear Blocks"
 author   = "Orbwinder"
 category = "Overlay"
-version  = "0.5.0"
+version  = "1.0.0"
 
 [script]
 dependencies = [ "VehicleState", "MLHook", "MLFeedRaceData" ]

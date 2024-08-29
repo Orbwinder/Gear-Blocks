@@ -8,16 +8,16 @@ class Event {
 
     uint64 t = 0.0;
     EVENT_TYPE eventType = EVENT_TYPE::None;
-    // TODO move out of base event class into specialized gear event
     uint gearNumber = 0;
 
-    //Constructor
+    // Constructor
     Event(uint64 timestamp, EVENT_TYPE type, int8 gearNum){
         t = timestamp;
         eventType = type;
         gearNumber = gearNum;
     }
 
+    // class comparison handler
     int opCmp(const Event &in a){
         if (this.eventType == a.eventType && this.gearNumber == a.gearNumber) {
             return 0;

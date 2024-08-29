@@ -1,7 +1,4 @@
 
-
-void OnSettingsChanged() {}
-
 void Main() {
     // loop to update events
     while (true) {

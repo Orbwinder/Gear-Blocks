@@ -2,15 +2,14 @@
 enum GearIndicator
 {
     Disengaged,   // gear is disengaged
-	Engaged,   // gear is engaged
-    
+	Engaged,      // gear is engaged
 }
 
 void Render() {
     if (!Setting_PluginEnabled || (Setting_HideWithGame && !UI::IsGameUIVisible())) return; // escape if the plugin is disabled
     
     auto visState = VehicleState::ViewingPlayerState();
-    if (visState is null) return; // escape if we there is no active player
+    if (visState is null) return; // escape if there is no active player
     if (isPlayingCutscene()) return; // hide overlay during intro cutscene
 
     vec2 screenSize = vec2(Draw::GetWidth(), Draw::GetHeight());
@@ -37,7 +36,6 @@ void Render() {
     // draw 5 gear capsules
     for (uint i = 1; i <= 5; i++) {
         auto style = GearIndicator::Disengaged;
-        // && VehicleState::GetRPM(visState) > 200.0f
         bool isStationary = VehicleState::GetRPM(visState) < 200.0f && displaySpeed == 0.0f;
         if(i <= visState.CurGear && !isStationary) {
             style = GearIndicator::Engaged;
@@ -97,18 +95,12 @@ void drawGearCapsule(const vec2 pos, const uint gearNum, const GearIndicator sty
         }
             
     }
-    // highlight the predicted gear in blue
-    // if (gearNum == predict) {
-    //     nvg::StrokeWidth(5.0f);
-	// 	nvg::StrokeColor(vec4(0.2f, 0.2f, 1, 1));
-    //     nvg::Stroke();
-    // }
 
     nvg::Fill();
     nvg::ClosePath();
 }
 
-// function to calculate the % transition based on the lenght of animation and current progress. clamped to 0~1
+// function to calculate the % transition based on the length of animation and current progress. clamped to 0~1
 float Animate(const float runtime, const uint diffTime) {
     return Math::Min(diffTime/runtime, 1.0f);
 }
