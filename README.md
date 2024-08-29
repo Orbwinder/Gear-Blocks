@@ -13,4 +13,4 @@ Authors: Orbwinder
 
 Suggestions/feedback: @Orbwinder on Openplanet discord
 
-Code/issues: [https://github.com/XertroV/tm-unintrusive-checkpoint-timer](https://github.com/XertroV/tm-unintrusive-checkpoint-timer)
+Code/issues: [https://github.com/Orbwinder/Gear-Blocks](https://github.com/Orbwinder/Gear-Blocks)
