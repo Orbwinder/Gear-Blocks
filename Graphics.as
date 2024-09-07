@@ -19,7 +19,7 @@ void Render() {
     // displaySpeed2 is the same as displaySpeed1 when traveling forward, but ignores vehicle rotation 
     // float displaySpeed2 = visState.WorldVel.Length() * 3.6f;
     float displaySpeed = visState.FrontSpeed * 3.6f;
-    uint predictedGear = getPredictedGear(displaySpeed);
+    uint predictedGear = getPredictedGear(displaySpeed, VehicleState::GetVehicleType(visState));
             
     // draw backing card
     nvg::BeginPath();
