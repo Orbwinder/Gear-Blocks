@@ -28,10 +28,14 @@ void UpdateEvents(){
             // change detected
             if (prevGear > nowGear) {
                 // lost a gear
-                g_events.InsertAt(0, Event(uint64(Time::get_Now()), EVENT_TYPE::Gear_Loss, prevGear));
-            } else {   
+                for(int i=prevGear; i>nowGear; i--){
+                    g_events.InsertAt(0, Event(uint64(Time::get_Now()), EVENT_TYPE::Gear_Loss, i));
+                }
+            } else {
                 // gained a gear
-                g_events.InsertAt(0, Event(uint64(Time::get_Now()), EVENT_TYPE::Gear_Gain, nowGear));
+                for(int i=nowGear; i>prevGear; i--){
+                    g_events.InsertAt(0, Event(uint64(Time::get_Now()), EVENT_TYPE::Gear_Gain, i));
+                }
             }
         }
 
